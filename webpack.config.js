@@ -1,6 +1,8 @@
 var path = require('path');
 const webpack = require('webpack');
 const { CheckerPlugin }  = require('awesome-typescript-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: [
@@ -44,6 +46,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     // new CheckerPlugin(),
