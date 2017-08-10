@@ -1,11 +1,19 @@
 import * as React from 'react';
 import * as styles from './App.css';
 
-interface AppProps { compiler:string; framework:string; }
+interface AppProps { compiler: string; framework: string; }
 
 // tslint:disable-next-line:no-default-export
 export default class App extends React.Component<AppProps, undefined> {
   render() {
-        return <h1>bye from {this.props.compiler} and {this.props.framework}!</h1>;
-    }
+    return (
+      <div>
+        <h1>Web Recorder</h1>
+        <button>录音</button>
+        <button>停止</button>
+        <div className='audio-container'>
+        </div>
+      </div>
+    );
+  }
 }
